@@ -17,10 +17,10 @@ user = User.create! name: "amanda2",
                     password_confirmation: "12345678",
                     token: SecureRandom.hex(8)
 
-30.times do
+10.times do
   secret = Secret.new
   secret.user = user
-  secret.comment = "heyyyyy"
-  secret.title =  "whattt wahthth"
+  secret.comment = Faker::Lorem.sentence(3)
+  secret.title =  Faker::Lorem.sentence
   secret.save!
 end
