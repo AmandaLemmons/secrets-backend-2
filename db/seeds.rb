@@ -11,16 +11,8 @@ require 'securerandom'
 
 
 
-user = User.create! name: "amanda2",
-                    email: "amanda@gmail.com",
+user = User.create! name: "amanda",
+                    email: "amanda.lemmons@gmail.com",
                     password: "12345678",
                     password_confirmation: "12345678",
                     token: SecureRandom.hex(8)
-
-10.times do
-  secret = Secret.new
-  secret.user = user
-  secret.comment = Faker::Lorem.sentence(3)
-  secret.title =  Faker::Lorem.sentence
-  secret.save!
-end
